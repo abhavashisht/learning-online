@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0; /*generates space around an elements content inside any defined borders*/
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary: #6c63ff; /*css variables*/
+    --color-success: #00bf83;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+    --color-danger-variant: rgba(247, 88, 66, 0.4);
+    --color-white: #fff;
+    --color-black: #000;
+    --color-bg: #1f2641;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
+    --color-bg3: #adb2eb;
+
+    --container-width-lg: 80%; /*large devices*/
+    --container-width-md: 90%; /*medium like tablets*/
+    --container-width-sm: 94%; /*small devices like mobile phones*/
+
+    --transition: all 400ms ease;   
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    color: var(--color-white); /*css variable calling*/
+    background: var(--color-bg);
+}
+
+.container{
+    width:80vw;
+    margin: 0 auto; /*puts everything in the center*/
+}
+
+section{
+    padding: 6rem 0; /* 1 rem = 16 pixels */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1, h2, h3, h4, h5{
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+a{
+    color: var(--color-white); /*link's colour*/
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.btn { /*buttons*/
+    display: inline-block;
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500; /*boldness*/
+    transition: var(--transition);
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-primary{
+    background: var(--color-danger);
+    color: var(--color-white); 
+    
+}
+
+/* ================= NAVBAR ======================*/
+nav{
+    background: transparent;
+    width: 100vw; /*full width*/
+    height: 4.7rem;
+    position: fixed;
+    top: 0;
+    z-index: 11; /*so its always on the top of the page*/
+    background-color: var(--color-danger);
+   
+}
+
+.nav__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+nav button {
+    display: none; /*the close and menu buttons won't show on larger devices*/
+}
+
+.nav__menu {
+    display: flex;  /* list (home, courses, about)*/ 
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav__menu a {
+    font-size: 0.9rem;
+     transition: var(--transition); /*home button etc slowly color change kare */
+}
+
+.nav__menu a:hover {
+    color: var(--color-bg2); /*home button etc pe cursor rakhke color change ho*/
+}
+
+/* ==================== HEADER =====================*/
+header {
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 7rem;
+}
+
+.header__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*header mein image aur quote saath saath mein aaye*/
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+}
+
+.header__left p {
+    margin: 1rem 0 2.4rem;
+}
+
+/* ======================== CATEGORIES ==========================*/
+.categories {
+    background: var(--color-bg1); /*categories ke piche border*/
+    height: 36rem;
+    position: relative;
+}
+
+.categories h1 {
+    line-height: 1;        /* categories header*/
+    margin-bottom: 3rem;
+}
+
+.categories__conatiner {   /*category and side mein boxes ki setting*/
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+}
+
+.categories__left p {
+    margin: 1rem /*for the top*/ 0 /*for left and right*/ 3rem /*for the bottom*/;
+    
+}
+
+.categories__right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*3 because 3 columns*/
+    gap: 1.2rem;
+    position: absolute;
+    width: 50vw;
+    right: 2rem;
+    bottom: 4.6rem;
+}
+.category:hover {
+    background-color: var(--color-bg3);
+}
+
+.category {
+    background: var(--color-bg2);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+
+.category__icon {
+    background: var(--color-primary);
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+
+
+.category h5 {
+    margin: 2rem 0 1rem;
+}
+
+.category p {
+    font-size: 0.85rem;
+}
+
+/*@media screen and (max-width:1120px){
+    h1{
+      font-size: 1.7rem;  
+    }
+    p{
+        font-size: 1rem;
+    }
+    .btn-primary span{
+        font-size: 0.9rem;
+    }
+    .btn{
+        padding: 0.5rem 1rem;
+    }
+} */
+
+/* ================================ POPULAR COURSES =================================*/
+.courses {
+    margin-top: 7rem;
+}
+
+.courses__Container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.course__image{
+    margin-bottom: 1rem;
+}
+
+.courses__info h4{
+margin-bottom: 0.5rem;
+}
+.courses__info p{
+    margin-bottom: 0.5rem;
+}
